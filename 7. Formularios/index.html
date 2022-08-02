@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="dataform" method="post" action="./backend/receive.php"> <!--placeholder es una etiqueta temporal que desaparece al rellenar-->
+       <fieldset><legend>Datos personales</legend>
+        <label for="name"></label>
+        <input type="text"
+        id="name"
+        name="name"
+        placeholder="Introduce tu nombre"
+        minlength="3"
+        maxlength="50"
+        title="Introduce al menos 3 caracteres máximo 50"
+        tabindex="0"
+        autofocus="true"
+        autocomplete="off"
+        required><br><br> <!--minlength y maxlength es el minimo y maximo de caracteres-->
+        <!--"required" hace que sea obligatorio-->
+       
+       <select id="typeDocument">
+        <option value="nada"select="selected">seleccione un tipo de documento</option>
+        <option value="cc">Cedula de ciudadania</option>
+        <option value="ti">Tarjeta de identidad</option>
+        <option value="ce">Tarjeta de identidad</option>
+
+       </select><br> <!--"type= number" solo se introducen numeros, no letras-->
+       <label for="document">No documento:</label>
+       <input type="number" 
+        id="document" 
+        name="document" 
+        placeholder="Introduce tu documento de identidad"
+        min="2"
+        max="9999"
+        tabindex="1"><br>
+        <label for= "estadoCivil">Estado civil:</label>
+        <input type="radio" name="ecivil" id="eCivil" value="Soltero">Soltero(a)
+        <input type="radio" name="ecivil" id="eCivil" value="Casado">Casado(a)
+        <input type="radio" name="ecivil" id="eCivil" value="Divor">Divorciado(a)
+        <input type="radio" name="ecivil" id="eCivil" value="Viudo">Viudo(a)
+                <!--el "name" es obligatorio para que no se pueda elegir mas de una-->
+    </fieldset> 
+    <label for="colores">color favorito:</label>
+        <input type="color" id="colores">
+        <label for="dateInsc">Fecha de inscripción:</label>
+        <input type= "date" id="dateInsc"><br>
+
+        <label for="documentfile">cargue los documentos requeridos:</label>
+        <input type="file" name="file" id="documentfile"><br><br>
+        
+    <fieldset><legend>Información de estudio y otros</legend>
+    <hr>
+    <label for="lenguajes">lenguajes de programacion</label>
+    <select id="Lenguajes" name="lenguajes">
+        <optgroup label="lenguajestipados">
+            <option value="Java">Java</option>
+            <option value="cSharp">C#</option>
+            <option value="c">C++</option>
+        </optgroup>
+        <optgroup label="lenguajes no tipados">
+            <option value="Pyhton">Python</option>
+            <option value="js">JavaScript</option>
+        </optgroup>
+    </select><br>
+    <label for="time">Choose a time for your meeting:</label>
+
+<input type="time" id="time" name="time"
+       min="01:00" max="24:00" required>
+
+<small>Numero de horas que desea trabajar:</small>
+
+    <label for="acepta">¿Acepta términos y condiciones?</label>
+    <input type="checkbox" id="terminos">
+    <hr>
+    <input type="submit" value="envio de datos"><!--PHP-->
+    <button id="validar"> Validar</button><!--JS-->
+
+    <!--time range tel week url reset textarea datalist y hidden-->
+    </fieldset>
+
+    </form>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
